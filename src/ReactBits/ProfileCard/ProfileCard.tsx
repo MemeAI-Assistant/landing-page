@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useCallback, useMemo } from 'react';
+import './ProfileCard.css';
 
 interface ProfileCardProps {
   avatarUrl: string;
@@ -44,9 +45,9 @@ const adjust = (value: number, fromMin: number, fromMax: number, toMin: number, 
 const easeInOutCubic = (x: number): number => (x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2);
 
 const ProfileCardComponent: React.FC<ProfileCardProps> = ({
-  avatarUrl = '',
-  iconUrl = '',
-  grainUrl = '',
+  avatarUrl = '<Placeholder for avatar URL>',
+  iconUrl = '<Placeholder for icon URL>',
+  grainUrl = '<Placeholder for grain URL>',
   behindGradient,
   innerGradient,
   showBehindGradient = true,
@@ -55,10 +56,10 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
   enableMobileTilt = false,
   mobileTiltSensitivity = 5,
   miniAvatarUrl,
-  name = 'Team Member',
-  title = 'Developer',
-  handle = 'developer',
-  status = 'Available',
+  name = 'Javi A. Torres',
+  title = 'Software Engineer',
+  handle = 'javicodes',
+  status = 'Online',
   contactText = 'Contact',
   showUserInfo = true,
   onContactClick
@@ -267,18 +268,7 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
         '--icon': iconUrl ? `url(${iconUrl})` : 'none',
         '--grain': grainUrl ? `url(${grainUrl})` : 'none',
         '--behind-gradient': showBehindGradient ? (behindGradient ?? DEFAULT_BEHIND_GRADIENT) : 'none',
-        '--inner-gradient': innerGradient ?? DEFAULT_INNER_GRADIENT,
-        '--pointer-x': '50%',
-        '--pointer-y': '50%',
-        '--pointer-from-center': '0',
-        '--pointer-from-top': '0.5',
-        '--pointer-from-left': '0.5',
-        '--card-opacity': '0',
-        '--rotate-x': '0deg',
-        '--rotate-y': '0deg',
-        '--background-x': '50%',
-        '--background-y': '50%',
-        '--card-radius': '30px'
+        '--inner-gradient': innerGradient ?? DEFAULT_INNER_GRADIENT
       }) as React.CSSProperties,
     [iconUrl, grainUrl, showBehindGradient, behindGradient, innerGradient]
   );
@@ -289,258 +279,10 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
 
   return (
     <div ref={wrapRef} className={`pc-card-wrapper ${className}`.trim()} style={cardStyle}>
-      <style>{`
-        .pc-card-wrapper {
-          perspective: 500px;
-          transform: translate3d(0, 0, 0.1px);
-          position: relative;
-          touch-action: none;
-        }
-
-        .pc-card-wrapper::before {
-          content: '';
-          position: absolute;
-          inset: -10px;
-          background: inherit;
-          background-position: inherit;
-          border-radius: inherit;
-          transition: all 0.5s ease;
-          filter: contrast(2) saturate(2) blur(36px);
-          transform: scale(0.8) translate3d(0, 0, 0.1px);
-          background-size: 100% 100%;
-          background-image: var(--behind-gradient);
-        }
-
-        .pc-card-wrapper:hover,
-        .pc-card-wrapper.active {
-          --card-opacity: 1;
-        }
-
-        .pc-card-wrapper:hover::before,
-        .pc-card-wrapper.active::before {
-          filter: contrast(1) saturate(2) blur(40px) opacity(1);
-          transform: scale(0.9) translate3d(0, 0, 0.1px);
-        }
-
-        .pc-card {
-          height: 350px;
-          display: grid;
-          aspect-ratio: 0.65;
-          border-radius: var(--card-radius);
-          position: relative;
-          background-blend-mode: color-dodge, normal, normal, normal;
-          box-shadow: rgba(0, 0, 0, 0.8) calc((var(--pointer-from-left) * 10px) - 3px)
-            calc((var(--pointer-from-top) * 20px) - 6px) 20px -5px;
-          transition: transform 1s ease;
-          transform: translate3d(0, 0, 0.1px) rotateX(0deg) rotateY(0deg);
-          background-size: 100% 100%;
-          background-position: 0 0, 0 0, 50% 50%, 0 0;
-          background-image:
-            radial-gradient(
-              farthest-side circle at var(--pointer-x) var(--pointer-y),
-              hsla(186, 100%, 90%, var(--card-opacity)) 4%,
-              hsla(186, 50%, 80%, calc(var(--card-opacity) * 0.75)) 10%,
-              hsla(186, 25%, 70%, calc(var(--card-opacity) * 0.5)) 50%,
-              hsla(186, 0%, 60%, 0) 100%
-            ),
-            radial-gradient(35% 52% at 55% 20%, #00ffaac4 0%, #073aff00 100%),
-            radial-gradient(100% 100% at 50% 50%, #00c1ffff 1%, #073aff00 76%),
-            conic-gradient(from 124deg at 50% 50%, #00c1ffff 0%, #07c6ffff 40%, #07c6ffff 60%, #00c1ffff 100%);
-          overflow: hidden;
-        }
-
-        .pc-card:hover,
-        .pc-card.active {
-          transition: none;
-          transform: translate3d(0, 0, 0.1px) rotateX(var(--rotate-y)) rotateY(var(--rotate-x));
-        }
-
-        .pc-card * {
-          display: grid;
-          grid-area: 1/-1;
-          border-radius: var(--card-radius);
-          transform: translate3d(0, 0, 0.1px);
-          pointer-events: none;
-        }
-
-        .pc-inside {
-          inset: 1px;
-          position: absolute;
-          background-image: var(--inner-gradient);
-          background-color: rgba(0, 0, 0, 0.9);
-          transform: translate3d(0, 0, 0.01px);
-        }
-
-        .pc-content {
-          max-height: 100%;
-          overflow: hidden;
-          text-align: center;
-          position: relative;
-          transform: translate3d(
-            calc(var(--pointer-from-left) * -6px + 3px),
-            calc(var(--pointer-from-top) * -6px + 3px),
-            0.1px
-          ) !important;
-          z-index: 5;
-          mix-blend-mode: luminosity;
-        }
-
-        .pc-details {
-            position: relative;        /* no absolute/top */
-            margin: 0;
-            padding: 0;
-            min-height: 72px;          /* locks header height */
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
-            margin-top: 20px;
-        }
-
-        .pc-details h3 {
-          font-weight: 600;
-          margin: 0;
-          font-size: 1.25em;
-          text-align: center;
-          background-image: linear-gradient(to bottom, #fff, #6f6fbe);
-          background-size: 1em 1.5em;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
-          -webkit-background-clip: text;
-        }
-
-        .pc-details p {
-          font-weight: 600;
-          position: relative;
-          top: -12px;
-          white-space: nowrap;
-          font-size: 14px;
-          margin: 15px auto;
-          width: min-content;
-          background-image: linear-gradient(to bottom, #fff, #4a4ac0);
-          background-size: 1em 1.5em;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
-          -webkit-background-clip: text;
-        }
-
-        .pc-avatar-content {
-          mix-blend-mode: screen;
-          overflow: hidden;
-          position: relative;
-        }
-
-        .pc-avatar-content .avatar {
-          width: 100%;
-          position: absolute;
-          left: 50%;
-          transform: translateX(-50%) scale(1);
-          bottom: 2px;
-          opacity: calc(1.75 - var(--pointer-from-center));
-        }
-
-        .pc-avatar-content::before {
-          content: '';
-          position: absolute;
-          inset: 0;
-          z-index: 1;
-          backdrop-filter: blur(30px);
-          mask: linear-gradient(
-            to bottom,
-            rgba(0, 0, 0, 0) 0%,
-            rgba(0, 0, 0, 0) 60%,
-            rgba(0, 0, 0, 1) 90%,
-            rgba(0, 0, 0, 1) 100%
-          );
-          pointer-events: none;
-        }
-
-        .pc-user-info {
-          position: absolute;
-          margin-top: auto;
-          bottom: 15px;
-          left: 15px;
-          right: 15px;
-          z-index: 2;
-          height: 56px;
-          margin: 0;                 /* <-- remove margin-top:auto */
-  width: auto;
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          background: rgba(255, 255, 255, 0.1);
-          backdrop-filter: blur(30px);
-          border: 1px solid rgba(255, 255, 255, 0.1);
-          border-radius: 15px;
-          padding: 10px 12px;
-          pointer-events: auto;
-        }
-
-        .pc-user-details {
-          display: flex;
-          align-items: center;
-          gap: 10px;
-          min-width: 0;
-        }
-
-        .pc-mini-avatar {
-          width: 32px;
-          height: 32px;
-          border-radius: 50%;
-          overflow: hidden;
-          border: 1px solid rgba(255, 255, 255, 0.1);
-          flex-shrink: 0;
-        }
-
-        .pc-mini-avatar img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          border-radius: 50%;
-        }
-
-        .pc-user-text {
-          display: flex;
-          align-items: flex-start;
-          flex-direction: column;
-          gap: 4px;
-        }
-
-        .pc-handle {
-          font-size: 12px;
-          font-weight: 500;
-          color: rgba(255, 255, 255, 0.9);
-          line-height: 1;
-        }
-
-        .pc-status {
-          font-size: 10px;
-          color: rgba(255, 255, 255, 0.7);
-          line-height: 1;
-        }
-
-        .pc-contact-btn {
-          border: 1px solid rgba(255, 255, 255, 0.1);
-          z-index: 3;
-          margin-left: 5px;
-          width: 60px;
-          border-radius: 8px;
-          padding: 6px 12px;
-          font-size: 11px;
-          font-weight: 600;
-          color: rgba(255, 255, 255, 0.9);
-          cursor: pointer;
-          transition: all 0.2s ease;
-          backdrop-filter: blur(10px);
-          background: transparent;
-        }
-
-        .pc-contact-btn:hover {
-          border-color: rgba(255, 255, 255, 0.4);
-          transform: translateY(-1px);
-        }
-      `}</style>
       <section ref={cardRef} className="pc-card">
         <div className="pc-inside">
+          <div className="pc-shine" />
+          <div className="pc-glare" />
           <div className="pc-content pc-avatar-content">
             <img
               className="avatar"
