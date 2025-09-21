@@ -4,6 +4,7 @@ import HeroSection from "./components/HeroSection";
 import FeaturesSection from "./components/FeaturesSection";
 import HowItWorksSection from "./components/HowItWorksSection";
 import Footer from "./components/Footer";
+import TeamSection from "./components/TeamSection";
 import ContactSection from "./components/ContactSection";
 
 const MainPage: React.FC = () => {
@@ -13,6 +14,7 @@ const MainPage: React.FC = () => {
         <HeroSection/>
         <FeaturesSection/>
         <HowItWorksSection/>
+        <TeamSection/>
         <ContactSection/>
         <Footer/>
     </div>

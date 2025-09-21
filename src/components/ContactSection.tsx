@@ -1,14 +1,30 @@
 import React, { useState } from 'react';
-import { Mail, MessageSquare, Send, MapPin, Phone } from 'lucide-react';
+import { Mail, MessageSquare, Send, MapPin, Phone, ChevronDown } from 'lucide-react';
+
+interface TeamMember {
+  name: string;
+  email: string;
+  role: string;
+}
 
 const ContactSection: React.FC = () => {
   const [successMessage, setSuccessMessage] = useState("");
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [selectedEmail, setSelectedEmail] = useState("");
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     subject: '',
     message: ''
   });
+
+  const teamEmails: TeamMember[] = [
+    { name: "Ahmet Kılavuz", email: "kilavuz.ahmet@metu.edu.tr", role: "Full-Stack Developer" },
+    { name: "Mithat Timurcan", email: "mithat.timurcan@metu.edu.tr", role: "Mobile Developer" },
+    { name: "Alperen Ovak", email: "alperen.ovak@metu.edu.tr", role: "AI Engineer" },
+    { name: "Eray Pasinlioğlu", email: "eray.pasinlioglu@metu.edu.tr", role: "Backend Developer" },
+    { name: "Adilhan Çetin", email: "adilhan.cetin@metu.edu.tr", role: "Data Engineer" }
+  ];
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -18,15 +34,24 @@ const ContactSection: React.FC = () => {
     }));
   };
 
+  const handleEmailSelect = (email: string, name: string) => {
+    setSelectedEmail(`${name} (${email})`);
+    setFormData(prev => ({
+      ...prev,
+      email: email
+    }));
+    setIsDropdownOpen(false);
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
-  e.preventDefault();
-  console.log("Form submitted:", formData);
+    e.preventDefault();
 
-  setSuccessMessage("✅ Message sent! We’ll get back to you soon.");
-  setFormData({ name: "", email: "", subject: "", message: "" });
+    setSuccessMessage("✅ Message sent! We'll get back to you soon.");
+    setFormData({ name: "", email: "", subject: "", message: "" });
+    setSelectedEmail("");
 
-  setTimeout(() => setSuccessMessage(""), 4000); // auto-hide after 4s
-};
+    setTimeout(() => setSuccessMessage(""), 4000);
+  };
 
   return (
     <section id="contact" className="py-20 bg-black">
@@ -54,21 +79,11 @@ const ContactSection: React.FC = () => {
             <div className="space-y-6">
               <div className="flex items-center space-x-4">
                 <div className="w-12 h-12 bg-gradient-to-br from-cyan-500 to-purple-600 rounded-lg flex items-center justify-center shadow-lg shadow-cyan-500/25">
-                  <Mail className="w-6 h-6 text-white" />
-                </div>
-                <div>
-                  <h4 className="font-semibold text-white">Email Us</h4>
-                  <p className="text-gray-300">hello@memefinder.com</p>
-                </div>
-              </div>
-
-              <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-gradient-to-br from-cyan-500 to-purple-600 rounded-lg flex items-center justify-center shadow-lg shadow-cyan-500/25">
                   <MessageSquare className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-white">Live Chat</h4>
-                  <p className="text-gray-300">Available 24/7 for Pro users</p>
+                  <h4 className="font-semibold text-white">Discord Server</h4>
+                  <p className="text-gray-300">Available for community support</p>
                 </div>
               </div>
 
@@ -77,8 +92,8 @@ const ContactSection: React.FC = () => {
                   <Phone className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-white">Support</h4>
-                  <p className="text-gray-300">Monday - Friday, 9AM - 6PM EST</p>
+                  <h4 className="font-semibold text-white">Office Hours</h4>
+                  <p className="text-gray-300">Monday - Friday, 2PM - 6PM (UTC+3)</p>
                 </div>
               </div>
 
@@ -88,7 +103,7 @@ const ContactSection: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold text-white">Location</h4>
-                  <p className="text-gray-300">San Francisco, CA</p>
+                  <p className="text-gray-300">METU Campus, Ankara, Turkey</p>
                 </div>
               </div>
             </div>
@@ -114,19 +129,38 @@ const ContactSection: React.FC = () => {
                   />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
-                    Email
+                  <label htmlFor="contactEmail" className="block text-sm font-medium text-gray-300 mb-2">
+                    Contact Team Member
                   </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    required
-                    className="w-full px-4 py-3 bg-gray-900 border border-gray-600 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-colors text-white placeholder-gray-400"
-                    placeholder="your@email.com"
-                  />
+                  <div className="relative">
+                    <button
+                      type="button"
+                      onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                      className="w-full px-4 py-3 bg-gray-900 border border-gray-600 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-colors text-white text-left flex items-center justify-between"
+                    >
+                      <span className={selectedEmail ? "text-white" : "text-gray-400"}>
+                        {selectedEmail || "Select team member to contact"}
+                      </span>
+                      <ChevronDown className={`w-5 h-5 text-gray-400 transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`} />
+                    </button>
+                    
+                    {isDropdownOpen && (
+                      <div className="absolute z-10 w-full mt-1 bg-gray-800 border border-gray-600 rounded-lg shadow-lg">
+                        {teamEmails.map((member, index) => (
+                          <button
+                            key={index}
+                            type="button"
+                            onClick={() => handleEmailSelect(member.email, member.name)}
+                            className="w-full px-4 py-3 text-left hover:bg-gray-700 transition-colors text-white border-b border-gray-600 last:border-b-0 first:rounded-t-lg last:rounded-b-lg"
+                          >
+                            <div className="font-medium">{member.name}</div>
+                            <div className="text-sm text-gray-400">{member.role}</div>
+                            <div className="text-sm text-cyan-400">{member.email}</div>
+                          </button>
+                        ))}
+                      </div>
+                    )}
+                  </div>
                 </div>
               </div>
 
@@ -170,7 +204,7 @@ const ContactSection: React.FC = () => {
                 <span>Send Message</span>
               </button>
               {successMessage && (
-                <p className="mt-2 text-green-600 font-medium">{successMessage}</p>
+                <p className="mt-2 text-green-400 font-medium">{successMessage}</p>
               )}
             </form>
           </div>
