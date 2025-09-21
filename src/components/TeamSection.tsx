@@ -1,7 +1,8 @@
 import React from 'react';
 import { Mail, Github, Linkedin } from 'lucide-react';
-import ProfileCard from './ProfileCard';
-import alperenPng from "../assets/alperen.png";
+import ProfileCard from '../ReactBits/ProfileCard/ProfileCard';
+import alperenPng from "../assets/team/alperen_card.png";
+import memeAssistantLogo from "../assets/logos/logobanner.svg";
 
 interface TeamMember {
   id: number;
@@ -39,9 +40,9 @@ const TeamSection: React.FC = () => {
     {
       id: 3,
       name: "Alperen Ovak",
-      role: "AI Engineer",
-      email: "alperen.ovak@metu.edu.tr",
-      handle: "alperen",
+      role: "AI/ML Engineer",
+      email: "alperenovak@gmail.com",
+      handle: "ovak",
       image: alperenPng ,
       github: "https://github.com/AlperenOvak",
       linkedin: "https://www.linkedin.com/in/alperen-ovak/"
@@ -96,9 +97,10 @@ const TeamSection: React.FC = () => {
           {teamMembers.map((member) => (
             <div key={member.id} className="flex flex-col items-center">
               <ProfileCard
-                className="scale-90 md:scale-100"
+                className="scale-[0.60]"
                 avatarUrl={member.image}
                 miniAvatarUrl={member.image}
+                iconUrl={memeAssistantLogo}
                 name={member.name}
                 title={member.role}
                 handle={member.handle}
