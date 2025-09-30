@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Download, Play, Star, Users, Zap } from 'lucide-react';
+import MetallicLogo from '../ReactBits/MetallicPaint/MetallicLogo';
 
 interface MemeFormat {
   text: string;
@@ -40,6 +41,8 @@ const HeroSection: React.FC = () => {
               </span>
               for Every Chat
             </h1>
+
+            <MetallicLogo />
             
             <p className="text-xl text-gray-300 mb-8 leading-relaxed">
               MemeFinder is the smart keyboard that analyzes your conversations and suggests the perfect viral memes, GIFs, and trending content. Turn every chat into comedy gold!
