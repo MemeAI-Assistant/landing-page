@@ -1,4 +1,5 @@
 import React from 'react';
+import MetallicLogo from '../ReactBits/MetallicPaint/MetallicLogo';
 
 const Footer: React.FC = () => {
   return (
@@ -7,7 +8,10 @@ const Footer: React.FC = () => {
         <div className="grid md:grid-cols-4 gap-8">
           <div>
             <div className="flex items-center space-x-3 mb-4">
-              <div className="w-8 h-8 bg-gradient-to-br from-cyan-400 to-purple-500 rounded-lg flex items-center justify-center">
+              <span className="inline-flex items-center justify-center w-8 h-8 mr-1.5">
+                <MetallicLogo />
+              </span>
+              <div className="hidden w-8 h-8 bg-gradient-to-br from-cyan-400 to-purple-500 rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-lg">🔍</span>
               </div>
               <span className="text-xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">MemeFinder</span>

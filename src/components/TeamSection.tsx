@@ -78,17 +78,17 @@ const TeamSection: React.FC = () => {
   ];
 
   return (
-    <section id="team" className="py-20 bg-gray-900">
+    <section id="team" className="py-14 md:py-16 bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center">
           <h2 className="text-4xl font-bold text-white mb-4">
             Meet Our Team
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-5">
             We are passionate computer engineering students from METU, working together to revolutionize how people discover and share memes.
           </p>
-          <div className="bg-gradient-to-r from-cyan-500/10 to-purple-500/10 border border-cyan-500/20 rounded-xl p-6 max-w-4xl mx-auto">
+          <div className="bg-gradient-to-r from-cyan-500/10 to-purple-500/10 border border-cyan-500/20 rounded-xl p-4 md:p-5 max-w-4xl mx-auto">
             <p className="text-gray-300 leading-relaxed">
               <span className="text-cyan-400 font-semibold">Hello!</span>{" "}
               We are final year Computer Engineering students at{" "}
@@ -101,7 +101,7 @@ const TeamSection: React.FC = () => {
         </div>
 
         {/* Cards */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 md:gap-5 lg:gap-6 -mt-6 md:-mt-10">
           {teamMembers.map((member) => (
             <div key={member.id} className="flex flex-col items-center">
               <ProfileCard
@@ -123,7 +123,7 @@ const TeamSection: React.FC = () => {
               />
 
               {/* Social links under the card */}
-              <div className="mt-4 flex justify-center gap-3">
+              <div className="-mt-6 md:-mt-20 flex justify-center gap-2 md:gap-2.5">
                 <a
                   href={`mailto:${member.email}`}
                   className="w-10 h-10 bg-gray-800 hover:bg-cyan-600 rounded-lg flex items-center justify-center transition-colors duration-200 group border border-gray-700"
