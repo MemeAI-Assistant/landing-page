@@ -2,6 +2,10 @@ import React from 'react';
 import { Mail, Github, Linkedin } from 'lucide-react';
 import ProfileCard from '../ReactBits/ProfileCard/ProfileCard';
 import alperenPng from "../assets/team/alperen_card.png";
+import ahmetPng from "../assets/team/ahmet_card.png";
+import mithatPng from "../assets/team/mithat_card.png";
+import erayPng from "../assets/team/eray_card.png";
+import adilhanPng from "../assets/team/adilhan_card.png";
 import memeAssistantLogo from "../assets/logos/logobanner.svg";
 
 interface TeamMember {
@@ -23,7 +27,8 @@ const TeamSection: React.FC = () => {
       role: "Full-Stack Developer",
       email: "kilavuz.ahmet@metu.edu.tr",
       handle: "ahmet",
-      image: "https://media.licdn.com/dms/image/v2/D4D03AQFG4Kh9zvPOIw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1691772000025?e=1761177600&v=beta&t=kiWtwfdPw-ojNOMakET81H4tMigS9oa10trK6RcuZDU",
+      //image: "https://media.licdn.com/dms/image/v2/D4D03AQFG4Kh9zvPOIw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1691772000025?e=1761177600&v=beta&t=kiWtwfdPw-ojNOMakET81H4tMigS9oa10trK6RcuZDU",
+      image: ahmetPng,
       github: "https://github.com/kilavuza",
       linkedin: "https://www.linkedin.com/in/ahmet-k%C4%B1lavuz-225320241/"
     },
@@ -33,7 +38,8 @@ const TeamSection: React.FC = () => {
       role: "Mobile Developer",
       email: "mithat.timurcan@metu.edu.tr",
       handle: "mithat",
-      image: "https://media.licdn.com/dms/image/v2/D4D03AQFg36HNlwJ63g/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1708720968304?e=1761177600&v=beta&t=oNmFVE1PYFJNOFHlAsRRXvU9ehxhWhx35AdCkyQb_KY",
+      //image: "https://media.licdn.com/dms/image/v2/D4D03AQFg36HNlwJ63g/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1708720968304?e=1761177600&v=beta&t=oNmFVE1PYFJNOFHlAsRRXvU9ehxhWhx35AdCkyQb_KY",
+      image: mithatPng,
       github: "https://github.com/mcantimurcan",
       linkedin: "https://www.linkedin.com/in/mithat-can-timurcan/"
     },
@@ -53,7 +59,8 @@ const TeamSection: React.FC = () => {
       role: "Backend Developer",
       email: "eray.pasinlioglu@metu.edu.tr",
       handle: "eray",
-      image: "https://media.licdn.com/dms/image/v2/D4E03AQEYpdoaF2VEyQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1714480714521?e=1761177600&v=beta&t=5K2ERJ5EaWdP_JgmBv92iLNBFgwZ9dfEeA-xkdqlNrg",
+      //image: "https://media.licdn.com/dms/image/v2/D4E03AQEYpdoaF2VEyQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1714480714521?e=1761177600&v=beta&t=5K2ERJ5EaWdP_JgmBv92iLNBFgwZ9dfEeA-xkdqlNrg",
+      image: erayPng,
       github: "https://github.com/eraypasinlioglu",
       linkedin: "https://www.linkedin.com/in/eray-pasinlioglu/"
     },
@@ -63,7 +70,8 @@ const TeamSection: React.FC = () => {
       role: "Data Engineer",
       email: "adilhan.cetin@metu.edu.tr",
       handle: "adilhan",
-      image: "https://media.licdn.com/dms/image/v2/D5603AQHubr5INR0wPA/profile-displayphoto-crop_800_800/B56ZlspIdOHAAI-/0/1758464356341?e=1761177600&v=beta&t=HBr2h0_iuYCR_7hpUxX6tf9c8sBP2uN5e2e0loho4GU",
+      //image: "https://media.licdn.com/dms/image/v2/D5603AQHubr5INR0wPA/profile-displayphoto-crop_800_800/B56ZlspIdOHAAI-/0/1758464356341?e=1761177600&v=beta&t=HBr2h0_iuYCR_7hpUxX6tf9c8sBP2uN5e2e0loho4GU",
+      image: adilhanPng,
       github: "https://github.com/adilhancetin",
       linkedin: "https://www.linkedin.com/in/adilhan-cetin/"
     }
