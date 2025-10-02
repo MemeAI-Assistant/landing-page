@@ -24,7 +24,7 @@ const Header: React.FC = () => {
               Features
             </a>
             <a href="#how-it-works" className="text-gray-300 hover:text-cyan-400 transition-colors duration-200 font-medium">
-              How It Works...
+              How It Works
             </a>
             <a href="#team" className="text-gray-300 hover:text-cyan-400 transition-colors duration-200 font-medium">
               Team
