@@ -18,7 +18,7 @@
 
 *The future of meme discovery is here* ✨
 
-[🎯 Live Demo](https://memeai-assistant.github.io/landing-page) | [📖 Documentation](#) | [🤝 Contributing](#)
+[🎯 Live Demo](https://memeai-assistant.github.io/landing-page) | [📖 Documentation](#)
 
 </div>
 
@@ -178,29 +178,11 @@ Meet the brilliant minds behind MEME-Assistant! 🧠✨
 <b>Mithat</b><br/>
 📱 <i>Mobile Developer</i>
 </td>
-<td align="center">
-<br/>
-<b>You?</b><br/>
-💫 <i><a href="#contributing">Join the team!</a></i>
-</td>
 </tr>
 </table>
 
 </div>
 
-### 🤝 Contributing
-
-We welcome contributions from the community! Whether you're interested in:
-
-- 🐛 **Bug fixes** and improvements
-- ✨ **New features** and enhancements  
-- 📚 **Documentation** updates
-- 🎨 **UI/UX** improvements
-- 🧪 **Testing** and quality assurance
-
-Check out our [Contributing Guidelines](#) to get started!
-
----
 
 <div align="center">
 
