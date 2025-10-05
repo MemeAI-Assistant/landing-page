@@ -6,7 +6,7 @@ import RotatingText from '../ReactBits/RotatingText/RotatingText';
 
 const HeroSection: React.FC = () => {
   return (
-    <section className="relative bg-gradient-to-br from-black via-gray-900 to-black pt-28 pb-16 min-h-screen overflow-hidden">
+    <section className="relative bg-gradient-to-br from-black via-gray-900 to-black pt-28 pb-16 overflow-hidden">
       <div style={{ 
             position: 'absolute', 
             top: 0, 
