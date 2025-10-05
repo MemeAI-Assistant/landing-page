@@ -66,7 +66,7 @@ const HeroSection: React.FC = () => {
                 <div className="group relative aspect-square cursor-pointer overflow-hidden rounded-xl border border-gray-600/30 bg-gray-900/50 transition-all hover:border-cyan-500">
                   
                   <img
-                    src="/memes/will-smith-1.jpg"
+                    src="src/assets/memes/will-smith-1.jpg"
                     alt="Will Smith slap meme 1"
                     className="h-full w-full object-cover"
                   />
@@ -74,7 +74,7 @@ const HeroSection: React.FC = () => {
 
                 <div className="group relative aspect-square cursor-pointer overflow-hidden rounded-xl border border-gray-600/30 bg-gray-900/50 transition-all hover:border-purple-500">
                   <img
-                    src="/memes/will-smith-2.jpg"
+                    src="src/assets/memes/will-smith-2.jpg"
                     alt="Will Smith slap meme 2"
                     className="h-full w-full object-cover"
                   />
@@ -82,7 +82,7 @@ const HeroSection: React.FC = () => {
 
                 <div className="group relative aspect-square cursor-pointer overflow-hidden rounded-xl border border-gray-600/30 bg-gray-900/50 transition-all hover:border-orange-500">
                   <img
-                    src="/memes/will-smith-3.jpg"
+                    src="src/assets/memes/will-smith-3.jpg"
                     alt="Will Smith slap meme 3"
                     className="h-full w-full object-cover"
                   />
