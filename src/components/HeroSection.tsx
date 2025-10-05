@@ -2,6 +2,7 @@ import React from 'react';
 import { Play, Star, Users, Search } from 'lucide-react';
 import MetallicLogo from '../ReactBits/MetallicPaint/MetallicLogo';
 import LiquidEther from '../ReactBits/LiquidEther/LiquidEther';
+import RotatingText from '../ReactBits/RotatingText/RotatingText';
 
 const HeroSection: React.FC = () => {
   return (
@@ -60,8 +61,21 @@ const HeroSection: React.FC = () => {
                 <span className="block text-4xl sm:text-5xl lg:text-6xl">
                   Search Memes
                 </span>
-                <span className="block bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-4xl text-transparent sm:text-5xl lg:text-6xl">
-                  Like You Talk
+                <span className="flex items-baseline text-cyan-400 bg-clip-text text-4xl sm:text-5xl lg:text-6xl">
+                  Like You{' '}
+                  <RotatingText
+                    texts={['Talk', 'Feel', 'Remember', 'Describe', 'Chat']}
+                    mainClassName="px-2 sm:px-2 md:px-3 py-0.5 sm:py-1 md:py-2 font-bold"
+                    elementLevelClassName=""
+                    staggerFrom={"last"}
+                    initial={{ y: "100%" }}
+                    animate={{ y: 0 }}
+                    exit={{ y: "-120%" }}
+                    staggerDuration={0.025}
+                    splitLevelClassName="overflow-hidden pb-0.5 sm:pb-1 md:pb-1"
+                    transition={{ type: "spring", damping: 30, stiffness: 400 }}
+                    rotationInterval={2000}
+                  />
                 </span>
                 <span className="block text-4xl sm:text-5xl lg:text-6xl">
                   About Them
@@ -97,7 +111,7 @@ const HeroSection: React.FC = () => {
                   <div className="group relative aspect-square cursor-pointer overflow-hidden rounded-xl border border-gray-600/30 bg-gray-900/50 transition-all hover:border-cyan-500">
                     
                     <img
-                      src="/memes/will-smith-1.jpg"
+                      src="public/memes/will-smith-1.jpg"
                       alt="Will Smith slap meme 1"
                       className="h-full w-full object-cover"
                     />
