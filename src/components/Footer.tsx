@@ -1,5 +1,5 @@
 import React from 'react';
-import MetallicLogo from '../ReactBits/MetallicPaint/MetallicLogo';
+import newLogo from '../assets/logos/newlogo.png';
 
 const Footer: React.FC = () => {
   return (
@@ -9,7 +9,11 @@ const Footer: React.FC = () => {
           <div>
             <div className="flex items-center space-x-3 mb-4">
               <span className="inline-flex items-center justify-center w-8 h-8 mr-1.5">
-                <MetallicLogo />
+                <img
+                  src={newLogo}
+                  alt="MemeFinder logo"
+                  className="w-8 h-8 object-contain filter brightness-0 invert"
+                />
               </span>
               <div className="hidden w-8 h-8 bg-gradient-to-br from-cyan-400 to-purple-500 rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-lg">🔍</span>

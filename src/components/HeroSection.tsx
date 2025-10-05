@@ -49,7 +49,7 @@ const HeroSection: React.FC = () => {
             {/* LEFT: tightened sizes & spacing */}
             <div className="max-w-2xl space-y-6 md:space-y-8">
               <div className="flex items-center gap-4">
-                <span className="inline-flex items-center justify-center w-12 h-12 sm:w-12 sm:h-12 shrink-0">
+                <span className="inline-flex items-center justify-center w-[4.5rem] h-[4.5rem] sm:w-[4.5rem] sm:h-[4.5rem] shrink-0">
                   <MetallicLogo />
                 </span>
                 <div className="inline-flex items-center rounded-full border border-cyan-500/30 bg-cyan-500/10 px-3 py-1.5 text-xs font-medium text-cyan-400 sm:text-sm">
