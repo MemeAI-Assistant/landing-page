@@ -6,7 +6,7 @@ import ahmetPng from "../assets/team/ahmet_card.png";
 import mithatPng from "../assets/team/mithat_card.png";
 import erayPng from "../assets/team/eray_card.png";
 import adilhanPng from "../assets/team/adilhan_card.png";
-import memeAssistantLogo from "../assets/logos/logobanner.svg";
+import memeAssistantLogo from "../assets/logos/newlogobanner.png";
 
 interface TeamMember {
   id: number;

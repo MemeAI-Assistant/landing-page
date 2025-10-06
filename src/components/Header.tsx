@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
-import MetallicLogo from '../ReactBits/MetallicPaint/MetallicLogo';
+import newLogo from '../assets/logos/newlogo.png';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -12,7 +12,11 @@ const Header: React.FC = () => {
           {/* Logo and Brand */}
           <div className="flex items-center space-x-3">
             <span className="inline-flex items-center justify-center w-8 h-8 mr-2">
-              <MetallicLogo />
+              <img
+                src={newLogo}
+                alt="MemeFinder logo"
+                className="w-8 h-8 object-contain filter brightness-0 invert"
+              />
             </span>
             <span className="text-xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
               MemeFinder
