@@ -3,6 +3,9 @@ import { Play, Star, Users, Search } from 'lucide-react';
 import MetallicLogo from '../ReactBits/MetallicPaint/MetallicLogo';
 import LiquidEther from '../ReactBits/LiquidEther/LiquidEther';
 import RotatingText from '../ReactBits/RotatingText/RotatingText';
+import willSmith1 from "../assets/memes/will-smith-1.jpg";
+import willSmith2 from "../assets/memes/will-smith-2.jpg";
+import willSmith3 from "../assets/memes/will-smith-3.jpg";
 
 const HeroSection: React.FC = () => {
   return (
@@ -111,7 +114,7 @@ const HeroSection: React.FC = () => {
                 <div className="group relative aspect-square cursor-pointer overflow-hidden rounded-xl border border-gray-600/30 bg-gray-900/50 transition-all hover:border-cyan-500">
                   
                   <img
-                    src="src/assets/memes/will-smith-1.jpg"
+                    src={willSmith1}
                     alt="Will Smith slap meme 1"
                     className="h-full w-full object-cover"
                   />
@@ -119,7 +122,7 @@ const HeroSection: React.FC = () => {
 
                 <div className="group relative aspect-square cursor-pointer overflow-hidden rounded-xl border border-gray-600/30 bg-gray-900/50 transition-all hover:border-purple-500">
                   <img
-                    src="src/assets/memes/will-smith-2.jpg"
+                    src={willSmith2}
                     alt="Will Smith slap meme 2"
                     className="h-full w-full object-cover"
                   />
@@ -127,7 +130,7 @@ const HeroSection: React.FC = () => {
 
                 <div className="group relative aspect-square cursor-pointer overflow-hidden rounded-xl border border-gray-600/30 bg-gray-900/50 transition-all hover:border-orange-500">
                   <img
-                    src="src/assets/memes/will-smith-3.jpg"
+                    src={willSmith3}
                     alt="Will Smith slap meme 3"
                     className="h-full w-full object-cover"
                   />
