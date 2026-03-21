@@ -2,6 +2,8 @@ import React from 'react';
 import newLogo from '../assets/logos/newlogo.png';
 
 const Footer: React.FC = () => {
+  const privacyUrl = `${import.meta.env.BASE_URL}privacy`;
+
   return (
     <footer className="bg-gray-900 border-t border-gray-800 text-white py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -51,7 +53,7 @@ const Footer: React.FC = () => {
               <li><a href="#" className="hover:text-cyan-400 transition-colors">About</a></li>
               <li><a href="#" className="hover:text-cyan-400 transition-colors">Blog</a></li>
               <li><a href="#" className="hover:text-cyan-400 transition-colors">Careers</a></li>
-              <li><a href="#" className="hover:text-cyan-400 transition-colors">Privacy</a></li>
+              <li><a href={privacyUrl} className="hover:text-cyan-400 transition-colors">Privacy</a></li>
             </ul>
           </div>
         </div>
