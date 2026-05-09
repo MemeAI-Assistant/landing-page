@@ -37,8 +37,8 @@ const Header: React.FC = () => {
             <a href="#team" className="text-gray-300 hover:text-cyan-400 transition-colors duration-200 font-medium">
               Team
             </a>
-            <a href="#contact" className="text-gray-300 hover:text-cyan-400 transition-colors duration-200 font-medium">
-              Contact
+            <a href="#download" className="text-gray-300 hover:text-cyan-400 transition-colors duration-200 font-medium">
+              Download
             </a>
           </nav>
 
@@ -75,8 +75,8 @@ const Header: React.FC = () => {
               <a href="#team" className="text-gray-300 hover:text-cyan-400 transition-colors duration-200 font-medium">
                 Team
               </a>
-              <a href="#contact" className="block text-gray-300 hover:text-cyan-400 transition-colors duration-200 font-medium py-2">
-                Contact
+              <a href="#download" className="block text-gray-300 hover:text-cyan-400 transition-colors duration-200 font-medium py-2">
+                Download
               </a>
               {/** Download disabled on mobile **/}
               {/**
