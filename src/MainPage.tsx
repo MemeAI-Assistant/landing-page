@@ -5,7 +5,7 @@ import FeaturesSection from "./components/FeaturesSection";
 // import HowItWorksSection from "./components/HowItWorksSection"; // Temporarily disabled: product not ready
 import Footer from "./components/Footer";
 import TeamSection from "./components/TeamSection";
-import ContactSection from "./components/ContactSection";
+import DownloadSection from "./components/DownloadSection";
 import PrivacyPage from "./PrivacyPage";
 
 const MainPage: React.FC = () => {
@@ -28,7 +28,7 @@ const MainPage: React.FC = () => {
           <FeaturesSection/>
           {/* <HowItWorksSection/> */}
           <TeamSection/>
-          <ContactSection/>
+          <DownloadSection/>
         </>
       )}
       <Footer/>
