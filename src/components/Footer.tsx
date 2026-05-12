@@ -2,7 +2,7 @@ import React from 'react';
 import newLogo from '../assets/logos/newlogo.png';
 
 const Footer: React.FC = () => {
-  const privacyUrl = `${import.meta.env.BASE_URL}privacy`;
+  const privacyUrl = `${import.meta.env.BASE_URL}privacy.html`;
 
   return (
     <footer className="bg-gray-900 border-t border-gray-800 text-white py-12">
